@@ -1,0 +1,11 @@
+{% load staticfiles %}
+{% if book_list %}
+<script src="{% static 'interests/javascript/angular.js' %}"></script>
+<ul>
+  {% for book in book_list %}
+  <li><a href="/interests/{{ book.id }}/">{{ book.title }}</a></li>
+  {% endfor %}
+<ul>
+{% else %}
+  <p>No books are available.</p>
+{% endif %}
